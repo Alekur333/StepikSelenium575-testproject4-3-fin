@@ -1,6 +1,5 @@
 from .main_page import MainPage
 from .locators import LoginPageLocators
-import time
 
 
 class LoginPage(MainPage):
@@ -29,7 +28,6 @@ class LoginPage(MainPage):
         self.browser.find_element(*LoginPageLocators.REGISTER_MAIL).send_keys(email)
         self.browser.find_element(*LoginPageLocators.PASSWORD1).send_keys(password)
         self.browser.find_element(*LoginPageLocators.PASSWORD2).send_keys(password)
-        time.sleep(1)
         self.browser.find_element(*LoginPageLocators.REGISTER_BTN).click()
 
 

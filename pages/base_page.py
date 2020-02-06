@@ -5,6 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import math
 
 class BasePage():
+
     def __init__(self, browser, url, timeout=10):
         self.browser = browser
         self.url = url
@@ -28,6 +29,7 @@ class BasePage():
         answer = str(math.log(abs((12 * math.sin(float(x))))))
         alert.send_keys(answer)
         alert.accept()
+
         try:
             alert = self.browser.switch_to.alert
             alert_text = alert.text
@@ -74,3 +76,4 @@ class BasePage():
     def should_be_authorized_user(self):
         assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
                                                                      " probably unauthorised user"
+
